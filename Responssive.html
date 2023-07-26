@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Layout</title>
+    <style>
+        /* CSS Reset to remove default margins and paddings */
+        body,
+        h1,
+        p,
+        header,
+        main,
+        footer {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Grid layout styles */
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            /* Header, Content, Footer */
+            min-height: 100vh;
+            /* Ensure the grid takes the full height of the viewport */
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        main {
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* Media queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            body {
+                grid-template-rows: auto 1fr auto;
+                /* Header, Content, Footer */
+            }
+
+            main {
+                justify-content: center;
+            }
+
+            box {
+                width: 48%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header,
+            footer {
+                text-align: center;
+            }
+
+            box {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Responsive images for larger screens */
+        @media screen and (min-width: 769px) {
+            box {
+                width: 23%;
+                /* 2 images in one row (100% / 2 = 50% - a little gap between images) */
+            }
+        }
+
+        /* Responsive images for medium-sized screens */
+        @media screen and (min-width: 481px) and (max-width: 768px) {
+            box {
+                width: 38%;
+                margin-left: 20px;
+                /* width: 48%; */
+                /* 2 images in one row (100% / 2 = 50% - a little gap between images) */
+            }
+        }
+
+        /* Responsive images for small screens */
+        @media screen and (max-width: 480px) {
+            box {
+                width: 100%;
+                /* 1 image in one row */
+            }
+        }
+
+        /* Responsive images */
+        box {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+            padding-left: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="headerText">Header Section</h1>
+    </header>
+
+    <main>
+        <!-- <h2>Content Section</h2> -->
+        <box style="background-color: rgb(245, 161, 161);"></box>
+        <box style="background-color: rgb(152, 152, 238);"></box>
+        <box style="background-color: rgb(174, 240, 174);"></box>
+        <box style="background-color: rgb(237, 205, 147);"></box>
+
+
+        <!-- <img src="../../components//images/product/Eco_Power.png" alt="Image 1">
+        <img src="../../components//images/product/Windly.png" alt="Image 2">
+        <img src="../../components//images/product/Eco_Power.png" alt="Image 3">
+        <img src="../../components//images/product/SunInside.png" alt="Image 4"> -->
+    </main>
+
+    <footer>
+        <p id="footerText">Footer Section</p>
+    </footer>
+</body>
+
+</html>
